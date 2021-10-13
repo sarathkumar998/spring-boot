@@ -53,7 +53,7 @@ node {
 
       echo "Docker Image Tag Name: ${dockerImageTag}"
 
-      sh "docker login -u sarath111 -p Sarath@12 ${dockerRepoUrl}"
+      sh "docker login -u sarath -p Sarath@12 ${dockerRepoUrl}"
       sh "docker tag ${dockerImageName} ${dockerImageTag}"
       sh "docker push ${dockerImageTag}"
     }
