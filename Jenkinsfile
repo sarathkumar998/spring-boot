@@ -51,7 +51,7 @@ node {
       
       // deploy docker image to nexus
 
-      echo "Docker Image Tag Name: ${dockerImage}"
+      echo "Docker Image Tag Name: ${dockerImageName}"
 
       sh "docker login -u sarath -p Sarath@12 65.21.62.149:9000 ${dockerrepoUrl}"
       sh "docker tag ${dockerImageName} ${dockerImageTag}"
