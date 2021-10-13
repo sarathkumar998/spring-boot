@@ -43,7 +43,7 @@ node {
      
 	    
 	    
-	    
+	dockerImage = docker.build("helloo-world-java")    
 	    
     }
    
