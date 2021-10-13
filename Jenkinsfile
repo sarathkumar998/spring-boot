@@ -7,13 +7,13 @@ node {
     def dockerImage
     // ip address of the docker private repository(nexus)
     
-    def dockerRepoUrl = "localhost:8083"
+    def dockerRepoUrl = "65.21.62.149:8083"
     def dockerImageName = "hello-world-java"
     def dockerImageTag = "${dockerRepoUrl}/${dockerImageName}:${env.BUILD_NUMBER}"
     
     stage('Clone Repo') { // for display purposes
       // Get some code from a GitHub repository
-      git 'https://github.com/dstar55/docker-hello-world-spring-boot.git'
+      git 'https://github.com/sarathkumar998/docker-hello-world-spring-boot.git'
       // Get the Maven tool.
       // ** NOTE: This 'maven-3.6.1' Maven tool must be configured
       // **       in the global configuration.           
@@ -53,7 +53,7 @@ node {
 
       echo "Docker Image Tag Name: ${dockerImageName}"
 
-      sh "docker login -u sarath -p Sarath@12 65.21.62.149:9000 ${dockerrepoUrl}"
+      sh "docker login -u sarath -p Sarath@12 65.21.62.149:8083 ${dockerrepoUrl}"
       sh "docker tag ${dockerImageName} ${dockerImageTag}"
       sh "docker push ${dockerImageTag}"
     }
