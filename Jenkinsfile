@@ -40,10 +40,11 @@ node {
     stage('Build Docker Image') {
       // build docker image
       
-      sh "ls -all /var/run/docker.sock"
-      sh "mv ./target/hello*.jar ./data" 
-      
-      dockerImage = docker.build("hello-world-java")
+     
+	    
+	    
+	    
+	    
     }
    
     stage('Deploy Docker Image'){
